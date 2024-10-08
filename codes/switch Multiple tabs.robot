@@ -1,7 +1,17 @@
+*** Settings ***
+Library    DateTime
+Library    SeleniumLibrary
+Library    BuiltIn
+Library    String
+Library    url_utils 
+Library           re
+*** Variables ***
+${URL1}    https://example.com
+${URL2}    https://google.com
+*** Test Cases ***
 Open Multiple Tabs and Switch
     Open Browser    ${URL1}    Chrome
     Maximize Browser Window
-
     # Open a new tab using JavaScript
     Execute Javascript    window.open("${URL2}","_blank")
 
